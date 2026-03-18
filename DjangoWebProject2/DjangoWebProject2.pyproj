@@ -29,29 +29,42 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DjangoWebProject2\MyApp1\admin.py" />
-    <Compile Include="DjangoWebProject2\MyApp1\apps.py" />
-    <Compile Include="DjangoWebProject2\MyApp1\migrations\__init__.py" />
-    <Compile Include="DjangoWebProject2\MyApp1\models.py" />
-    <Compile Include="DjangoWebProject2\MyApp1\tests.py" />
-    <Compile Include="DjangoWebProject2\MyApp1\views.py" />
-    <Compile Include="DjangoWebProject2\MyApp1\__init__.py" />
+    <Compile Include="DjangoWebProject2\management\commands\importCSV.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="manage.py" />
     <Compile Include="DjangoWebProject2\__init__.py" />
     <Compile Include="DjangoWebProject2\settings.py" />
     <Compile Include="DjangoWebProject2\urls.py" />
     <Compile Include="DjangoWebProject2\wsgi.py" />
+    <Compile Include="MyApp1\admin.py" />
+    <Compile Include="MyApp1\apps.py" />
+    <Compile Include="MyApp1\forms.py" />
+    <Compile Include="MyApp1\migrations\__init__.py" />
+    <Compile Include="MyApp1\models.py" />
+    <Compile Include="MyApp1\tests.py" />
+    <Compile Include="MyApp1\views.py" />
+    <Compile Include="MyApp1\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DjangoWebProject2\MyApp1\templates\MyApp1\index.html" />
+    <Content Include="MyApp1\templates\MyApp1\input.html" />
+    <Content Include="MyApp1\templates\MyApp1\index.html" />
+    <Content Include="MyApp1\__pycache__\admin.cpython-314.pyc" />
+    <Content Include="MyApp1\__pycache__\apps.cpython-314.pyc" />
+    <Content Include="MyApp1\__pycache__\models.cpython-314.pyc" />
+    <Content Include="MyApp1\__pycache__\views.cpython-314.pyc" />
+    <Content Include="MyApp1\__pycache__\__init__.cpython-314.pyc" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DjangoWebProject2\" />
-    <Folder Include="DjangoWebProject2\MyApp1\" />
-    <Folder Include="DjangoWebProject2\MyApp1\migrations\" />
-    <Folder Include="DjangoWebProject2\MyApp1\templates\" />
-    <Folder Include="DjangoWebProject2\MyApp1\templates\MyApp1\" />
+    <Folder Include="DjangoWebProject2\management\commands\" />
+    <Folder Include="MyApp1\" />
+    <Folder Include="DjangoWebProject2\management\" />
+    <Folder Include="MyApp1\migrations\" />
+    <Folder Include="MyApp1\templates\" />
+    <Folder Include="MyApp1\templates\MyApp1\" />
+    <Folder Include="MyApp1\__pycache__\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 

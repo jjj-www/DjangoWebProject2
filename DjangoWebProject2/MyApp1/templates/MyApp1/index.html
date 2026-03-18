@@ -1,0 +1,23 @@
+<html>
+<head><title></title></head>
+<body>
+    <strong>Teachers:</strong>
+    {% if content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Teaching Area</th>
+        </tr>
+        {% for teach in content %}
+        <tr>
+            <td>{{teach.Name}}</td>
+            <td>{{teach.Area}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong>No data!</strong>
+    {% endif %}
+    <p><a href="">Input new Teachers</a></p>
+</body>
+</html>
