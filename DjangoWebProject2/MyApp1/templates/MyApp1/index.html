@@ -1,12 +1,13 @@
 <html>
 <head>
     <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     <strong>Teachers:</strong>
     {% if content %}
-    <table>
-        <tr>
+    <table class="table table-striped">
+        <tr class="table-dark">
             <th>Name</th>
             <th>Teaching Area</th>
         </tr>
@@ -20,7 +21,8 @@
     {% else %}
     <strong>No data!</strong>
     {% endif %}
-    <p><a href="">Input new Teachers</a></p>
+    <p><a class="btn btn-danger" href="/admin/MyApp1/teacher/add/" role="button">Input new teachers</a></p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 <!--
 <form action="" method="post">
