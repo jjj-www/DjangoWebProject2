@@ -13,4 +13,4 @@ class Command(BaseCommand):
             for row in reader:
                 teacher.objects.create(Name=row[0],Area=row[1])
 
-            print('Added ' + str(count) + 'new teachers!')
+            print('Added ' + str.count() + 'new teachers!')

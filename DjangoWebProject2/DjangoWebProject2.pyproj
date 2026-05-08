@@ -62,9 +62,11 @@
     <Folder Include="MyApp1\" />
     <Folder Include="DjangoWebProject2\management\" />
     <Folder Include="MyApp1\migrations\" />
+    <Folder Include="MyApp1\NewFolder1\" />
     <Folder Include="MyApp1\templates\" />
     <Folder Include="MyApp1\templates\MyApp1\" />
     <Folder Include="MyApp1\__pycache__\" />
+    <Folder Include="stativ\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
