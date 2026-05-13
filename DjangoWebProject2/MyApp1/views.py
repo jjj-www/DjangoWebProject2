@@ -48,7 +48,7 @@ def generate_pdf_file():
         return buffer
 
 def report(request):
-    pdf_file =  staticfiles_storage.path("EON15P-1_1_.pdf")
+    pdf_file =  staticfiles_storage.path("S1 Weekly Planner 2026_DigitalSolutions (2).pdf")
     try:        
         merger = PdfWriter()
 
