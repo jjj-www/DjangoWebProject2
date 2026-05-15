@@ -18,6 +18,29 @@
         </tr>
         {% endfor %}
     </table>
+
+    <table class="table table-striped">
+        <tr class="table-dark">
+            <th>Assessment Item 1</th>
+            <th>Due Date</th>
+            <th>Assessment Item 2</th>
+            <th>Due Date</th>
+            <th>Assessment Item 3</th>
+            <th>Due Date</th>
+            <th>Content Description</th>
+        </tr>
+        {% for teach in content %}
+        <tr>
+            <td>{{unit.AssessmentItem1}}</td>
+            <td>{{unit.AssessmentItem1DueDate}}</td>
+            <td>{{unit.AssessmentItem2}}</td>
+            <td>{{unit.AssessmentItem2DueDate}}</td>
+            <td>{{unit.AssessmentItem3}}</td>
+            <td>{{unit.AssessmentItem3DueDate}}</td>
+            <td>{{unit.ContentDescription}}</td>
+        </tr>
+        {% endfor %}
+    </table>
     {% else %}
     <strong>No data!</strong>
     {% endif %}

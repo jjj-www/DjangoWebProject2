@@ -12,7 +12,9 @@ from io import BytesIO #Using Byte streams
 # Create your views here.
 def index(request):
     teach = teacher.objects.all()
+    unit = unitoutline.objects.all()
     return render(request,"MyApp1/index.html",{'content': teach})
+    #return render(request,"MyApp1/index.html",{'content': unit})
 
 def input_view(request):
     if request.method == "POST":
@@ -37,22 +39,45 @@ def generate_pdf_file():
     for teach in teachers:
         lines.append((teach.Name, teach.Area))
 
-        table = Table(lines)
-        table.wrapOn(p, 300, 300)
-        table.drawOn(p, 10, 650)
+    table = Table(lines)
 
-        p.showPage()
-        p.save()
+    table.wrapOn(p, 300, 300)
+    table.drawOn(p, 10, 650)
 
-        buffer.seek(0)
-        return buffer
+    p.showPage()
+    p.save()
+
+    buffer.seek(0)
+    return buffer
+
+def generate_pdf_file2():
+
+    buffer = BytesIO()
+    p = canvas.Canvas(buffer)
+    lines = [('Assessment Item 1:', 'Due Date:', 'Assessment Item 2:', 'Due Date:', 'Assessment Item 3:', 'Due Date:', 'Content Description')]
+
+    unitoutlines = unitoutline.objects.all()
+
+    for unit in unitoutlines:
+        lines.append((unit.AssessmentItem1, unit.AssessmentItem1DueDate, unit.AssessmentItem2, unit.AssessmentItem2DueDate, unit.AssessmentItem3, unit.AssessmentItem3DueDate, unit.ContentDescription))
+
+    table = Table(lines)
+
+    table.wrapOn(p, 300, 300)
+    table.drawOn(p, 10, 650)
+
+    p.showPage()
+    p.save()
+
+    buffer.seek(0)
+    return buffer
 
 def report(request):
-    pdf_file =  staticfiles_storage.path("S1 Weekly Planner 2026_DigitalSolutions (2).pdf")
+    pdf_file =  staticfiles_storage.path("solutions.pdf")
     try:        
         merger = PdfWriter()
 
-        input1 = PdfReader(generate_pdf_file())
+        input1 = PdfReader(generate_pdf_file2())
         input2 = PdfReader(pdf_file, "rb")
 
         merger.append(input1)
@@ -64,6 +89,6 @@ def report(request):
 
         response = FileResponse(buffer, as_attachment=True, filename="hello.pdf")
     except FileNotFoundError:
-        response = FileResponse(generate_pdf_file(), as_attachment=True, filename="no.pdf")
+        response = FileResponse(generate_pdf_file2(), as_attachment=True, filename="no.pdf")
 
     return response
