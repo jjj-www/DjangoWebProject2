@@ -54,12 +54,12 @@ def generate_pdf_file2():
 
     buffer = BytesIO()
     p = canvas.Canvas(buffer)
-    lines = [('Assessment Item 1:', 'Due Date:', 'Assessment Item 2:', 'Due Date:', 'Assessment Item 3:', 'Due Date:', 'Content Description')]
+    lines = [('Assessment Item 1:', 'Due Date:', 'Assessment Item 2:', 'Due Date:', 'Assessment Item 3:', 'Due Date:', 'Content Description', 'Delivered As VET:')]
 
     unitoutlines = unitoutline.objects.all()
 
     for unit in unitoutlines:
-        lines.append((unit.AssessmentItem1, unit.AssessmentItem1DueDate, unit.AssessmentItem2, unit.AssessmentItem2DueDate, unit.AssessmentItem3, unit.AssessmentItem3DueDate, unit.ContentDescription))
+        lines.append((unit.AssessmentItem1, unit.AssessmentItem1DueDate, unit.AssessmentItem2, unit.AssessmentItem2DueDate, unit.AssessmentItem3, unit.AssessmentItem3DueDate, unit.ContentDescription, unit.DeliveredAsVET))
 
     table = Table(lines)
 

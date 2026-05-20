@@ -11,4 +11,4 @@ class InputForm(forms.ModelForm):
 class InputForm(forms.ModelForm):
     class Meta:
         model = unitoutline
-        fields = ['AssessmentItem1', 'AssessmentItem1DueDate', 'AssessmentItem2', 'AssessmentItem2DueDate', 'AssessmentItem3', 'AssessmentItem3DueDate', 'ContentDescription']
+        fields = ['AssessmentItem1', 'AssessmentItem1DueDate', 'AssessmentItem2', 'AssessmentItem2DueDate', 'AssessmentItem3', 'AssessmentItem3DueDate', 'ContentDescription', 'DeliveredAsVET']
