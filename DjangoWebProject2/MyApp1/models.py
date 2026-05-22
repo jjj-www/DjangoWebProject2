@@ -13,4 +13,4 @@ class unitoutline(models.Model):
     AssessmentItem3 = models.CharField(max_length=40)
     AssessmentItem3DueDate = models.DateField()
     ContentDescription = models.CharField(max_length=5000)
-    DeliveredAsVET = models.BooleanField()
+    DeliveredAsVET = models.BooleanField(default=False)
