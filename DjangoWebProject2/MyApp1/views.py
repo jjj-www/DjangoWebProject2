@@ -74,14 +74,17 @@ def generate_pdf_file2():
 
 def report(request):
     pdf_file =  staticfiles_storage.path("solutions.pdf")
+    pdf_filevet =  staticfiles_storage.path("theloicense.pdf")
     try:        
         merger = PdfWriter()
 
         input1 = PdfReader(generate_pdf_file2())
         input2 = PdfReader(pdf_file, "rb")
+        input3 = PdfReader(pdf_filevet, "rb")
 
         merger.append(input1)
         merger.append(input2)
+        merger.append(input3)
         
         buffer = BytesIO()
         merger.write(buffer)
